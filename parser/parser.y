@@ -3396,7 +3396,7 @@ default_value_expression:
   }
 | NOW '(' ')'
   {
-    $$ = NewBitVal($1)
+    $$ = &FuncExpr{Name: NewIdent($1, false)}
   }
 | function_call_generic
   {
